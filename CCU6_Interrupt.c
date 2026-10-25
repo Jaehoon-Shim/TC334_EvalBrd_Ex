@@ -37,9 +37,9 @@
 #include "ASCLIN.h"
 
 //#include "nn_basic.h"
-//#include "nn_basic_diag.h"
+#include "nn_basic_diag.h"
 //#include "nn_MTPA.h"
-#include "nn_duty_comp.h"
+//#include "nn_duty_comp.h"
 
 /*********************************************************************************************************************/
 /*-------------------------------------------------Global variables--------------------------------------------------*/
@@ -125,9 +125,8 @@ void isrCCU6T12(void)
     /*
     * 컨버터 듀티 보상
     */
-    volatile float temp_input[NN_INPUT_NUM] = {8.f , 2.f};
-    NN_Run(&temp_input[0]);
-
+    //volatile float temp_input[NN_INPUT_NUM] = {8.f , 2.f};
+    //NN_Run(&temp_input[0]);
 
     /*
     * 고장 진단 신경망 시험 입력
@@ -136,18 +135,22 @@ void isrCCU6T12(void)
     * 고장 진단 모델을 사용할 때만 아래 블록을 활성화하고,
     * 위의 MTPA 시험 코드는 동시에 비활성화함
     */
-    /*
+
     volatile float temp_input[NN_INPUT_NUM] =   {
-        5.4148f, -2.0793f,  -4.1294f, -4.1294f,   8.8633f, 10.8036f,
-        -0.1978f, -0.1354f,  -9.4121f, -9.4121f, -11.9553f, -2.2192f,
-        -5.3062f,  2.2049f,  13.1828f, 13.1828f,   2.9556f, -8.8627f
-    };
+            0.1313000f, -3.2872000f, -3.4811001f, -0.4445000f,  3.2413001f,  3.4700999f,
+             3.0894001f,  3.3886001f,  0.0404000f, -3.4867001f, -3.4856000f, -0.3257000f,
+            -3.6203001f, -0.5832000f,  3.2646999f,  3.2939000f,  0.1547000f, -3.3506000 };
     NN_Run(&temp_input[0]);
-    */
+
 
     /* 현재 ISR의 실행 시간 측정을 종료한다. */
     END_TICK_MANAGER(Control_Time);
 }
+
+
+
+
+
 
 
 
