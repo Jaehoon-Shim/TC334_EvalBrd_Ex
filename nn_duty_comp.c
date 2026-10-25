@@ -20,18 +20,15 @@ volatile float hidden_output2[HIDDEN_NUM];
 /* =========================================================
  * MINMAX parameters
  * ========================================================= */
-const float x_mean[NN_INPUT_NUM] = { 19.3500003f, 5.6999998f};
-const float x_std[NN_INPUT_NUM] = { 7.6861882f, 2.8913664f};
+const float x_mean[NN_INPUT_NUM] = { 19.350000f, 5.7f};
+const float x_std[NN_INPUT_NUM] = { 7.686188f, 2.891366f};
 
-const float y_mean = 0.0186292f;
-const float y_std  = 0.0079966f;
+const float y_mean = 0.018629f;
+const float y_std  = 0.007997f;
 
 /* =========================================================
  * NN parameters
  * ========================================================= */
-/* Auto-generated PyTorch ANN parameters */
-/* Weight layout: [input][output] */
-
 /* Auto-generated PyTorch ANN parameters */
 /* Weight layout: [input][output] */
 
@@ -67,8 +64,6 @@ const float nn_theta3[8][1] = {
 };
 
 const float nn_bias3[1] = {0.2920245f};
-
-
 
 TimeManager NN_Time1 = {0.0f};
 TimeManager NN_Time2 = {0.0f};
