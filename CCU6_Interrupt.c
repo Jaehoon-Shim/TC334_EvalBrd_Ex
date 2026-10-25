@@ -118,7 +118,7 @@ void isrCCU6T12(void)
     * 단일 토크 지령을 입력하여 MTPA 전류 지령을 계산한다.
     */
     /*
-    volatile float temp_input = 100.f;
+    volatile float temp_input = 8.62719f;
     NN_Run(&temp_input);
     */
 
